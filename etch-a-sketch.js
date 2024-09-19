@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function regenerateGrid() {
-        let width = prompt("Enter the width for your new sketchpad (limit: 100)");
+        let width = prompt("Enter the new width in pixels (limit: 100)");
 
         if (width === null) {
             return;
@@ -58,11 +58,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const infoPopup = document.querySelector("#info-popup");
 
     infoButton.addEventListener("mouseover", () => {
-        infoPopup.style.display = "block";
+        infoPopup.classList.add("show");
     })
 
     infoButton.addEventListener("mouseout", () => {
-        infoPopup.style.display = "none";
+        infoPopup.classList.remove("show");
     })
 
     // set size button
@@ -72,12 +72,15 @@ document.addEventListener("DOMContentLoaded", () => {
         regenerateGrid();
     });
 
-    // clear sketchpad button
+    // clear button
     const clearButton = document.querySelector("#clear");
 
     clearButton.addEventListener("click", () => {
         clearGrid();
     });
+
+    // eraser button
+
 
     // pen color buttons
     const colorButtons = document.querySelectorAll(".colorButton");

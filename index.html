@@ -9,23 +9,28 @@
 </head>
 <body>
     <div id="info-popup">
-        <div>How to Draw:</div>
+        <div>How to draw:</div>
         <ul>
-            <li>Click anywhere on the screen to place your pen down</li>
+            <li>Click anywhere on the screen to place the pen down</li>
             <li>Move your mouse to draw</li>
-            <li>Click again to lift your pen up</li>
-            <li>Change the size of the sketchpad's grid boxes with the "Set Sketchpad Grid Size" button</li>
+            <li>Click again to lift the pen up</li>
+            <li>The more times you go over a pixel, the darker it will be</li>
         </ul>
     </div>
     <div id="header">
         <div class="subhead">
             <img src="./icons/info.svg" id="info-button">
         </div>
-        <div id="page-title">Etch-a-Sketch!</div>
+        <div id="page-title">Pixel Art Sketchbook</div>
         <div id="author subhead">Created by Aria Shi</div>
     </div>
     <div id="toolbar">
-        <button class="tool" id="set-size">Set Sketchpad Grid Size</button>
+        <div class="toolbar-left">
+            <div class="tool" id="set-size">
+                <img src="./icons/grid.svg">
+                <div>Change Pixel Size</div>
+            </div>
+        </div>
         <div class="tool" id="pen-color">
             <div id="black" class="colorButton selected"></div>
             <div id="red" class="colorButton"></div>
@@ -35,8 +40,14 @@
             <div id="blue" class="colorButton"></div>
             <div id="purple" class="colorButton"></div>
             <div id="pink" class="colorButton"></div>
+            <div id="white" class="colorButton"></div>
         </div>
-        <div class="tool" id="clear">Clear Sketchpad</div>
+        <div class="toolbar-right">
+            <div class="tool" id="clear">
+                <img src="./icons/trash-2.svg">
+                <div>Clear</div>
+            </div>
+        </div>
     </div>
     <div id="grid-container"></div>
 </body>

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const gridContainer = document.querySelector("#grid-container");
-    let penColor = "black";
+    let penColor = "rgb(0, 0, 0)";
 
     function createGrid(width) {
         let penDown = false; // controls whether the pen is down (drawing) or not
@@ -15,14 +15,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
             div.addEventListener("mouseover", () => {
                 if (penDown) {
-                    if (penColor !== "rgb(255, 255, 255)") {
-                        let opacity = parseFloat(window.getComputedStyle(div).opacity);
-                        opacity += 0.2;
-                        div.style.opacity = opacity.toString();
-                    } else {
+                    let divColor = window.getComputedStyle(div).backgroundColor;
+                    
+                    if (penColor != divColor) {
                         div.style.opacity = "0";
                     }
+
                     div.style.backgroundColor = penColor;
+                    let opacity = parseFloat(window.getComputedStyle(div).opacity);
+                    opacity += 0.2;
+                    div.style.opacity = opacity.toString();
+                    
                 }
             })
 

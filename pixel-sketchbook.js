@@ -11,14 +11,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
             div.addEventListener("click", () => {
                 penDown = !penDown; // toggle penDown on click
-                console.log(penDown);
             })
 
             div.addEventListener("mouseover", () => {
                 if (penDown) {
-                    let opacity = parseFloat(window.getComputedStyle(div).opacity);
-                    opacity += 0.2;
-                    div.style.opacity = opacity.toString();
+                    if (penColor !== "rgb(255, 255, 255)") {
+                        let opacity = parseFloat(window.getComputedStyle(div).opacity);
+                        opacity += 0.2;
+                        div.style.opacity = opacity.toString();
+                    } else {
+                        div.style.opacity = "0";
+                    }
                     div.style.backgroundColor = penColor;
                 }
             })
